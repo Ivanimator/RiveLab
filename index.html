@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Altar de Muertos – Rive Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fira Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --bg: #161616;
+      --text: #eeeeee;
+      --button-bg: #eeeeee;
+      --button-text: #161616;
+      --button-bg-hover: #000000;
+      --button-text-hover: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      font-family: "Fira Sans", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif; /* force Fira Sans everywhere */
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      width: 100%;
+      max-width: 960px;
+      padding: 24px 16px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      margin: 0 0 16px;
+      font-weight: 600;
+    }
+
+    .canvas-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+    }
+
+    canvas {
+      width: min(600px, 90vw);
+      height: min(600px, 90vw);
+      background: transparent;
+    }
+
+    .next-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 22px;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+      border: none;
+      cursor: pointer;
+      background: var(--button-bg);
+      color: var(--button-text);
+      border-radius: 0;
+      transition: background-color 0.15s ease, color 0.15s ease, transform 0.12s ease;
+      text-transform: none; /* keep exact emoji text */
+    }
+
+    .next-button:hover {
+      background: var(--button-bg-hover);
+      color: var(--button-text-hover);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <main>
+
+    <!-- Updated title -->
+    <header>
+      <h1>• Altar de Muertos •</h1>
+    </header>
+
+    <section class="canvas-wrapper">
+      <canvas id="riveCanvas"></canvas>
+    </section>
+
+    <!-- Updated button text + emoji -->
+    <button
+      class="next-button"
+      onclick="window.location.href='solstitium.html'"
+    >
+      🌗 Solstitium →
+    </button>
+
+  </main>
+
+  <script src="https://unpkg.com/@rive-app/webgl2@latest"></script>
+  <script src="altar.js"></script>
+</body>
+</html>
